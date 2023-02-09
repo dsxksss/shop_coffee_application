@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # lock files
-./src-tauri/Cargo.lock
+*/Cargo.lock
