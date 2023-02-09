@@ -1,15 +1,19 @@
 <script setup>
 import "./index.css";
+import { ref } from "vue";
+import LeftContent from "./components/LeftContent.vue"
+import RightContent from "./components/RightContent.vue"
+const menuTarget = ref(true);
+
 </script>
 
 <template>
-  <div class="container">
-    <button class=" text-lg btn rounded-full">我是一个BUTTON</button>
+  <div class="flex flex-row h-screen">
+    <LeftContent :menu="menuTarget" />
+    <RightContent @changeMenu="(t) => menuTarget = !t" :menu="menuTarget" />
   </div>
 </template>
 
 <style scoped>
-.container {
-  @apply flex justify-center items-center h-screen w-screen;
-}
+
 </style>
