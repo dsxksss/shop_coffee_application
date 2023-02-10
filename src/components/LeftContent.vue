@@ -1,17 +1,12 @@
 <script setup>
-import TitileMenu from "./TitleMenu.vue";
-import IconMenu from "./IconMenu.vue";
-const props = defineProps({
-    menu: Boolean
-});
-
+import Menu from "./Menu.vue";
 </script>
 
 <!-- TODO 待优化导航栏 -->
 
 <template>
-    <div class="p-2 border-r-2 border-gray-700">
-        <TitileMenu v-if="menu" />
-        <IconMenu v-else />
+    <div class="flex flex-col space-y-6 p-2 border-r-2 border-gray-700">
+        <Menu />
+        <Menu />
     </div>
 </template>
