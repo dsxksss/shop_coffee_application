@@ -7,7 +7,7 @@ const emit = defineEmits(['changeMenu'])
 </script>
 
 <template>
-    <div class="w-full text-white p-2">
+    <div class="w-full p-2">
         <button class="btn" @click="emit('changeMenu', menu)">CHANGE ME</button>
     </div>
 </template>
