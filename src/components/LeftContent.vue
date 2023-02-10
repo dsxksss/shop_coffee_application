@@ -10,7 +10,7 @@ const props = defineProps({
 <!-- TODO 待优化导航栏 -->
 
 <template>
-    <div class="p-2 border-r-2 border-gray-500">
+    <div class="p-2 border-r-2 border-gray-700">
         <TitileMenu v-if="menu" />
         <IconMenu v-else />
     </div>
