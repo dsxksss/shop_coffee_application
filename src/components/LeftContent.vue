@@ -1,17 +1,12 @@
 <script setup>
-import TitileMenu from "./TitleMenu.vue";
-import IconMenu from "./IconMenu.vue";
-const props = defineProps({
-    menu: Boolean
-});
-
+import Menu from "./Menu.vue";
 </script>
 
 <!-- TODO 待优化导航栏 -->
+<!-- FIXME 待修复滚动引发的左导航栏滚动问题  -->
 
 <template>
-    <div class="p-2 border-r-2 border-gray-500">
-        <TitileMenu v-if="menu" />
-        <IconMenu v-else />
+    <div class="flex flex-col px-2 bg-[#252C39]">
+        <Menu />
     </div>
 </template>
