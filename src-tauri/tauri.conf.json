@@ -12,6 +12,38 @@
   },
   "tauri": {
     "allowlist": {
+      "window": {
+        "all": true,
+        "create": true,
+        "center": true,
+        "requestUserAttention": true,
+        "setResizable": true,
+        "setTitle": true,
+        "maximize": true,
+        "unmaximize": true,
+        "minimize": true,
+        "unminimize": true,
+        "show": true,
+        "hide": true,
+        "close": true,
+        "setDecorations": true,
+        "setAlwaysOnTop": true,
+        "setSize": true,
+        "setMinSize": true,
+        "setMaxSize": true,
+        "setPosition": true,
+        "setFullscreen": true,
+        "setFocus": true,
+        "setIcon": true,
+        "setSkipTaskbar": true,
+        "setCursorGrab": true,
+        "setCursorVisible": true,
+        "setCursorIcon": true,
+        "setCursorPosition": true,
+        "setIgnoreCursorEvents": true,
+        "startDragging": true,
+        "print": true
+      },
       "all": false,
       "shell": {
         "all": false,
@@ -60,10 +92,12 @@
     "windows": [
       {
         "fullscreen": false,
+        "center": true,
         "height": 800,
         "resizable": true,
         "title": "ShopCoffee",
-        "width": 1200
+        "width": 1200,
+        "decorations": false
       }
     ]
   }
