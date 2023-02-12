@@ -91,6 +91,7 @@
     },
     "windows": [
       {
+        "label":"ApplicationWindow",
         "fullscreen": false,
         "center": true,
         "height": 800,
