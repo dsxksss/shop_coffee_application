@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* TODO 自定义滚动条 */
+/* 隐藏滚动条 */
+::-webkit-scrollbar{
+    display: none;
+}

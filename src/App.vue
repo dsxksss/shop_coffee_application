@@ -1,12 +1,19 @@
 <script setup>
 import "./index.css";
-import LeftContent from "./components/LeftContent.vue"
-import RightContent from "./components/RightContent.vue"
+import Menu from "./components/Menu.vue";
+import NavBar from './components/NavBar.vue';
+import PageContent from "./components/PageContent.vue"
 </script>
 
+
 <template>
-  <div class="flex flex-row">
-    <LeftContent class="h-screen" />
-    <RightContent class=" " />
-  </div>
+  <!-- TODO 待优化导航栏 -->
+  <main class="w-screen overflow-hidden rounded-box">
+    <!-- 导航栏 -->
+    <NavBar data-tauri-drag-region class="z-10 fixed px-5 border-b-slate-700 border-b-[1px]" />
+    <!-- 菜单栏 -->
+    <Menu class="fixed h-screen flex justify-center flex-col pl-6" />
+    <!-- 页面容器 -->
+    <PageContent class="ml-24 mt-20 overflow-scroll" />
+  </main>
 </template>
