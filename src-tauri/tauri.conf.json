@@ -91,13 +91,15 @@
     },
     "windows": [
       {
-        "label":"ApplicationWindow",
+        "label": "ApplicationWindow",
         "fullscreen": false,
         "center": true,
-        "height": 800,
         "resizable": true,
         "title": "ShopCoffee",
+        "height": 780,
+        "minHeight": 660,
         "width": 1200,
+        "minWidth": 1080,
         "decorations": false
       }
     ]

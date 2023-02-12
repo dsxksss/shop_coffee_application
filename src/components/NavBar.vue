@@ -6,7 +6,7 @@ import { appWindow } from '@tauri-apps/api/window'
 </script>
 
 <template>
-    <div class="navbar mb-10 px-0">
+    <div class="navbar bg-base-100">
         <div data-tauri-drag-region class="flex-1">
             <button class="btn btn-ghost text-2xl">商店</button>
 
@@ -39,13 +39,13 @@ import { appWindow } from '@tauri-apps/api/window'
             <div class="divider divider-horizontal py-2 mx-1"></div>
             <div class="flex flex-row justify-center space-x-2">
                 <button @click="appWindow.minimize()" class="btn btn-sm btn-ghost btn-square">
-                    <MinusIcon class="w-5 h-5" />
+                    <MinusIcon class="w-7 h-7" />
                 </button>
                 <button @click="appWindow.toggleMaximize()" class="btn btn-sm btn-ghost btn-square">
-                    <StopIcon class="w-5 h-5" />
+                    <StopIcon class="w-7 h-7" />
                 </button>
                 <button @click="appWindow.close()" class="btn btn-sm btn-ghost btn-square">
-                    <XMarkIcon class="w-5 h-5" />
+                    <XMarkIcon class="w-7 h-7" />
                 </button>
             </div>
         </div>
