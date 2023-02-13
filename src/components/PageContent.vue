@@ -1,8 +1,16 @@
 <script setup>
-import ProductPage from '../pages/ProductPage.vue';
+import Home from "../pages/Home.vue"
+import Product from '../pages/Product.vue';
+import {inject} from "vue"
+
+const pages = [
+    Home,
+    Product,
+];
+
 </script>
 
 <template>
-    <!-- <ProductPage /> -->
-    <button class="btn">BUTTON</button>
+    <!-- <Product /> -->
+    <component :is="pages[inject('nowPage').value]" />
 </template>

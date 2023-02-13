@@ -1,39 +1,12 @@
 <script setup>
-import { BuildingStorefrontIcon } from '@heroicons/vue/24/solid'
-import { ShoppingCartIcon } from '@heroicons/vue/24/solid'
-import { UserIcon } from '@heroicons/vue/24/solid'
-import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
-
-import { ref } from "vue";
-const items = ref([
-    {
-        index: 0,
-        title: "商品",
-        iconColor: '',
-        component: BuildingStorefrontIcon,
-    },
-    {
-        index: 1,
-        title: "购物车",
-        iconColor: '',
-        component: ShoppingCartIcon,
-    },
-    {
-        index: 2,
-        title: "个人",
-        iconColor: '',
-        component: UserIcon,
-    },
-    {
-        index: 3,
-        title: "设置",
-        iconColor: '',
-        component: Cog6ToothIcon,
-    },
-]);
+import menuItems from "../data/menuItems"
+import { ref, inject } from "vue";
+let items = ref(menuItems);
+const nowPage = inject('nowPage')
 
 function changePage(pageIndex) {
-    items.value[pageIndex].title = "选中";
+    items.value.forEach(item => item.isActive = item.index === pageIndex);
+    nowPage.value = pageIndex;
 }
 
 </script>
@@ -41,9 +14,9 @@ function changePage(pageIndex) {
 <template>
     <ul class="menu rounded-box p-2 space-y-2">
         <li v-for="item in items" :key="item.index">
-                <a :class="item.index == 0 ? 'active' : null" @click="changePage(item.index)">
-                    <component :is="item.component" :class="`w-6 h-6 ${item.iconColor}`"></component>
-                </a>
-            </li>
-        </ul>
+            <a :class="item.isActive ? 'active' : null" @click="changePage(item.index)">
+                <component :is="item.component" :class="`w-6 h-6 ${item.iconColor}`"></component>
+            </a>
+        </li>
+    </ul>
 </template>

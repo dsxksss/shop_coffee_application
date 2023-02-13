@@ -3,11 +3,16 @@ import "./index.css";
 import Menu from "./components/Menu.vue";
 import NavBar from './components/NavBar.vue';
 import PageContent from "./components/PageContent.vue"
+import { ref,provide } from "vue";
+
+const nowPage = ref(0);
+provide("nowPage",nowPage);
+
+
 </script>
 
 
 <template>
-  <!-- TODO 待优化导航栏 -->
   <main class="w-screen overflow-hidden rounded-box">
     <!-- 导航栏 -->
     <NavBar data-tauri-drag-region class="z-10 fixed px-5 border-b-slate-700 border-b-[1px]" />
