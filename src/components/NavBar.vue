@@ -2,13 +2,15 @@
 import { ShoppingCartIcon, MinusIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/solid';
 import { StopIcon } from '@heroicons/vue/24/outline';
 import { appWindow } from '@tauri-apps/api/window'
+import { inject } from 'vue';
+import menuItems from '../data/menuItems';
 
 </script>
 
 <template>
     <div class="navbar bg-base-100">
         <div data-tauri-drag-region class="flex-1">
-            <button class="btn btn-ghost text-2xl">商店</button>
+            <button class="btn btn-ghost text-2xl">{{ menuItems[inject('nowPage').value].title }}</button>
 
         </div>
         <div class="flex-none">
