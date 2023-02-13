@@ -11,6 +11,7 @@ const pages = [
 </script>
 
 <template>
-    <!-- <Product /> -->
-    <component :is="pages[inject('nowPage').value]" />
+    <KeepAlive>
+        <component :is="pages[inject('nowPage').value]" />
+    </KeepAlive>
 </template>
