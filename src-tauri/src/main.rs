@@ -3,6 +3,8 @@
     windows_subsystem = "windows"
 )]
 
+// FIXME mac端窗口缩放、窗口阴影问题
+
 use tauri::Manager;
 use window_shadows::set_shadow;
 
