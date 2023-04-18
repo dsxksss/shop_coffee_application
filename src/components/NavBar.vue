@@ -2,8 +2,32 @@
 import { ShoppingCartIcon, MinusIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/solid';
 import { StopIcon } from '@heroicons/vue/24/outline';
 import { appWindow } from '@tauri-apps/api/window'
+import { platform } from "@tauri-apps/api/os"
 import { inject } from 'vue';
 import menuItems from '../data/menuItems';
+
+async function toggleMaximizeButton()  {
+    const platformName = await platform();
+    const isFullscreen = await appWindow.isFullscreen();
+    console.log(platformName);
+    console.log(isFullscreen)
+    //  如果系统为win，最大化按钮对应最大化功能
+    if (platformName === 'win32') {
+        appWindow.toggleMaximize()
+    }
+    //  如果系统为macos，最大化按钮对应则为全屏功能
+    else if(platformName === 'darwin') {
+        if (isFullscreen) {
+            appWindow.setFullscreen(false)
+        } else {
+            appWindow.setFullscreen(true)
+        }
+    }
+    //  如果为其他系统，最大化按钮对应最大化功能
+    else{
+        appWindow.toggleMaximize()
+    }
+}
 
 </script>
 
@@ -40,13 +64,13 @@ import menuItems from '../data/menuItems';
             </div>
             <div class="divider divider-horizontal py-2 mx-1"></div>
             <div class="flex flex-row justify-center space-x-2">
-                <button @click="appWindow.minimize()" class="btn btn-sm btn-ghost btn-square">
+                <button @click="appWindow.minimize" class="btn btn-sm btn-ghost btn-square">
                     <MinusIcon class="w-7 h-7" />
                 </button>
-                <button @click="appWindow.toggleMaximize()" class="btn btn-sm btn-ghost btn-square">
+                <button @click="toggleMaximizeButton" class="btn btn-sm btn-ghost btn-square">
                     <StopIcon class="w-7 h-7" />
                 </button>
-                <button @click="appWindow.close()" class="btn btn-sm btn-ghost btn-square">
+                <button @click="appWindow.close" class="btn btn-sm btn-ghost btn-square">
                     <XMarkIcon class="w-7 h-7" />
                 </button>
             </div>
