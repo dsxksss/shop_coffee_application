@@ -9,8 +9,6 @@ import menuItems from '../data/menuItems';
 async function toggleMaximizeButton()  {
     const platformName = await platform();
     const isFullscreen = await appWindow.isFullscreen();
-    console.log(platformName);
-    console.log(isFullscreen)
     //  如果系统为win，最大化按钮对应最大化功能
     if (platformName === 'win32') {
         appWindow.toggleMaximize()
