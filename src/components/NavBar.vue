@@ -32,14 +32,16 @@ async function toggleMaximizeButton()  {
 <template>
     <div class="navbar bg-base-100">
         <div data-tauri-drag-region class="flex-1">
-            <button class="btn btn-ghost text-2xl">{{ menuItems[inject('nowPage').value].title }}</button>
+            <button class="btn btn-ghost text-2xl">
+                <component :is="menuItems[inject('nowPage').value].component" :class="`w-6 h-6 ${menuItems[inject('nowPage').value].iconColor}`"></component>
+                {{ menuItems[inject('nowPage').value].title }}
+            </button>
 
         </div>
         <div class="flex-none">
             <div class="flex flex-row items-center space-x-2">
-                <input type="text" placeholder="查找商品" class="input w-full max-w-xs h-8" />
-                <button class="btn btn-sm btn-ghost btn-square">
-                    <MagnifyingGlassIcon class="w-6 h-6" />
+                <button class="btn btn-ghost btn-circle">
+                    <MagnifyingGlassIcon class="w-7 h-7" />
                 </button>
 
             </div>
