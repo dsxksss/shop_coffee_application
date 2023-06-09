@@ -13,12 +13,12 @@ provide("nowPage", nowPage);
 
 
 <template>
-  <main class="w-screen overflow-hidden rounded-box">
+  <main class="h-screen overflow-hidden">
     <!-- 导航栏 -->
-    <NavBar data-tauri-drag-region class="z-10 fixed px-5 border-b-slate-700 border-b-[1px]"></NavBar>
+    <NavBar data-tauri-drag-region></NavBar>
     <!-- 菜单栏 -->
-    <Menu class="fixed h-screen flex justify-center flex-col pl-6"></Menu>
+    <Menu></Menu>
     <!-- 页面容器 -->
-    <PageContent class="ml-24 mt-20 overflow-scroll"></PageContent>
+    <PageContent></PageContent>
   </main>
 </template>

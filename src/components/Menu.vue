@@ -12,7 +12,7 @@ function changePage(pageIndex) {
 </script>
 
 <template>
-    <ul class="menu rounded-box p-2 space-y-2">
+    <ul class="fixed top-0 h-screen justify-center pl-6 menu rounded-box p-2 space-y-2">
         <li v-for="item in items" :key="item.index">
             <a :class="item.isActive ? 'active' : null" @click="changePage(item.index)">
                 <component :is="item.component" :class="`w-6 h-6 ${item.iconColor}`"></component>
