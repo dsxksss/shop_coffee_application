@@ -1,10 +1,16 @@
 <script setup>
+import { useRouter } from "vue-router"
+import { ref, watch, onMounted } from "vue"
 import { ShoppingCartIcon, MinusIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/solid';
 import { StopIcon } from '@heroicons/vue/24/outline';
 import { appWindow } from '@tauri-apps/api/window'
 import { platform } from "@tauri-apps/api/os"
-import { inject } from 'vue';
 import menuItems from '../data/menuItems';
+
+const router = useRouter();
+const nowComponent = ref({});
+
+const getNowComponent = () => nowComponent.value = menuItems.find(item => item.path === router.currentRoute.value.path)
 
 async function toggleMaximizeButton() {
     const platformName = await platform();
@@ -27,6 +33,11 @@ async function toggleMaximizeButton() {
     }
 }
 
+onMounted(() => {
+    getNowComponent();
+})
+
+watch(router.currentRoute, getNowComponent)
 
 </script>
 
@@ -34,19 +45,18 @@ async function toggleMaximizeButton() {
     <div class="navbar z-10 fixed top-0 px-5 border-b-slate-700 border-b-[1px]">
         <div data-tauri-drag-region class="flex-1">
             <button class="btn btn-ghost text-2xl">
-                <component :is="menuItems[inject('nowPage').value].component"
-                    :class="`w-6 h-6 ${menuItems[inject('nowPage').value].iconColor}`"></component>
-                {{ menuItems[inject('nowPage').value].title }}
+                <component :is="nowComponent.component" :class="`w-6 h-6 ${nowComponent.iconColor}`"></component>
+                {{ nowComponent.title }}
             </button>
 
         </div>
         <div class="flex-none">
-            <div v-if="menuItems[inject('nowPage').value].index == 0" class="flex flex-row items-center space-x-2">
+            <div v-if="nowComponent.path == '/'" class="flex flex-row items-center space-x-2">
                 <button class="btn btn-ghost btn-circle">
                     <MagnifyingGlassIcon class="w-7 h-7" />
                 </button>
             </div>
-            <div v-if="menuItems[inject('nowPage').value].index != 1" class="dropdown dropdown-end">
+            <div v-if="nowComponent.path != '/productCar'" class="dropdown dropdown-end">
                 <label tabindex="0" class="btn btn-ghost btn-circle">
                     <div class="indicator">
                         <ShoppingCartIcon class="w-6 h-6" />
@@ -54,7 +64,7 @@ async function toggleMaximizeButton() {
                     </div>
                 </label>
             </div>
-            <div v-if="menuItems[inject('nowPage').value].index != 1" class="divider divider-horizontal py-2 mx-1"></div>
+            <div v-if="nowComponent.path != '/productCar'" class="divider divider-horizontal py-2 mx-1"></div>
             <div class="flex flex-row justify-center space-x-2">
                 <button @click="appWindow.minimize" class="btn btn-sm btn-ghost btn-square">
                     <MinusIcon class="w-7 h-7" />

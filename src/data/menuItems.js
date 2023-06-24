@@ -5,28 +5,28 @@ import { Cog6ToothIcon } from '@heroicons/vue/24/solid'
 
 const menuItems = [
     {
-        index: 0,
+        path: '/',
         title: "商品",
         iconColor: '',
         isActive: true,
         component: BuildingStorefrontIcon,
     },
     {
-        index: 1,
+        path: '/productCar',
         title: "购物车",
         iconColor: '',
         isActive: false,
         component: ShoppingCartIcon,
     },
     {
-        index: 2,
+        path: '/my',
         title: "个人",
         iconColor: '',
         isActive: false,
         component: UserIcon,
     },
     {
-        index: 3,
+        path: '/setting',
         title: "设置",
         iconColor: '',
         isActive: false,
