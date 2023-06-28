@@ -3,6 +3,7 @@ import { CurrencyYenIcon } from "@heroicons/vue/24/solid"
 const props = defineProps({
     image: String,
     title: String,
+    price: Number,
     description: String,
 })
 </script>
@@ -17,7 +18,7 @@ const props = defineProps({
             <p>{{ description || "没有描述没有描述没有描述没有描述没有描述没有描述没有描述" }}</p>
             <div class="card-actions space-x-2 pt-2 justify-center items-center">
                 <div class="flex flex-row">
-                    <span class="text-3xl font-black">19.5</span>
+                    <span class="text-3xl font-black">{{ price || 19.5 }}</span>
                     <CurrencyYenIcon class="w-6 h-6" />
                 </div>
                 <button class="btn btn-ghost text-lg">现在购买</button>
