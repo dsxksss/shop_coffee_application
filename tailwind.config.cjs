@@ -9,8 +9,8 @@ module.exports = {
   },
   daisyui: {
     themes: [
-      {
-        mytheme: {
+     {
+        dark: {
           "primary": "#4b5563",
           "secondary": "#0284c7",
           "accent": "#0891b2",
@@ -21,6 +21,17 @@ module.exports = {
           "warning": "#ea580c",
           "error": "#ef4444",
         },
+        light:{
+          "primary": "#e5e7eb",
+          "secondary": "#06b6d4",
+          "accent": "#1dcdbc",
+          "neutral": "#2b3440",
+          "base-100": "#ffffff",
+          "info": "#3abff8",
+          "success": "#36d399",
+          "warning": "#fb923c",
+          "error": "#f87272",
+        }
       },
     ],
   },

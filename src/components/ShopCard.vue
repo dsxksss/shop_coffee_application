@@ -14,13 +14,13 @@ const props = defineProps({
         </figure>
         <div class="card-body">
             <h2 class="card-title">{{ title || "没有标题" }}</h2>
-            <p>{{ description || "没有描述没有描述没有描述没有描述没有描述没有描述没有描述"}}</p>
+            <p>{{ description || "没有描述没有描述没有描述没有描述没有描述没有描述没有描述" }}</p>
             <div class="card-actions space-x-2 pt-2 justify-center items-center">
                 <div class="flex flex-row">
                     <span class="text-3xl font-black">19.5</span>
                     <CurrencyYenIcon class="w-6 h-6" />
                 </div>
-                <button class="btn text-lg">现在购买</button>
+                <button class="btn btn-ghost text-lg">现在购买</button>
             </div>
         </div>
     </div>
