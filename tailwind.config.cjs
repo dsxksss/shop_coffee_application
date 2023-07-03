@@ -9,19 +9,19 @@ module.exports = {
   },
   daisyui: {
     themes: [
-     {
+      {
         dark: {
           "primary": "#4b5563",
           "secondary": "#0284c7",
           "accent": "#0891b2",
           "neutral": "#374151",
-         "base-100": "#1d232a",
+          "base-100": "#1d232a",
           "info": "#0ea5e9",
           "success": "#6ee7b7",
           "warning": "#ea580c",
           "error": "#ef4444",
         },
-        light:{
+        light: {
           "primary": "#e5e7eb",
           "secondary": "#06b6d4",
           "accent": "#1dcdbc",

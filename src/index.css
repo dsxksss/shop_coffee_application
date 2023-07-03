@@ -4,12 +4,12 @@
 
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: #1f2937;
+    @apply: base-100;
 }
 
 ::-webkit-scrollbar {
     width: 8px;
-    background-color: #1f2937;
+    @apply: base-100;
 }
 
 ::-webkit-scrollbar-thumb {
